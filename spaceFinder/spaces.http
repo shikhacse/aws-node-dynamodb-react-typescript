@@ -1,5 +1,8 @@
 
 
 
-GET https://lnjh8uz197.execute-api.us-east-2.amazonaws.com/prod/spaces
+GET https://jspfr52878.execute-api.us-east-2.amazonaws.com/prod/spaces
+###
+
+POST https://jspfr52878.execute-api.us-east-2.amazonaws.com/prod/spaces
 ###
