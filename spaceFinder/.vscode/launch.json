@@ -13,12 +13,13 @@
                 "-r",
                 "ts-node/register"
             ],
-            "args": [
-                "${relativeFile}"
-            ],
+            "program": "${file}",
             "env":{
-                "AWS_REGION":"us-east-2"
-            }
+                "AWS_REGION":"us-east-2",
+                "TABLE_NAME":"SpaceTable-0a502dc16267"
+            },
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"]
         }
     ]
 }
