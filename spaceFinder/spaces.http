@@ -1,5 +1,31 @@
 
+@url = https://jspfr52878.execute-api.us-east-2.amazonaws.com/prod/
+@token = eyJraWQiOiJhYUlDekJJXC90Z0NUMVM1UFJ6M1FXUmVcL3BpV2RxOEkxNjRYM1BQZjhmRU09IiwiYWxnIjoiUlMyNTYifQ.eyJzdWIiOiI4MTdiOTVkMC0wMDQxLTcwZDktMThlZS02OTZhNTNlZjU1ZGMiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtZWFzdC0yLmFtYXpvbmF3cy5jb21cL3VzLWVhc3QtMl9tR2k5MHplUVYiLCJjb2duaXRvOnVzZXJuYW1lIjoic2hpa2hhIiwib3JpZ2luX2p0aSI6IjA0OGY4ZGJlLTJhZGItNGM3YS1iZTU1LTgzOGQ4MjcxNGRlOSIsImF1ZCI6IjdraHJ2OW42ZzhiZDV0Z2RncjdqcjdnNmdzIiwiZXZlbnRfaWQiOiI1NWVkMTcyZC00ZjFmLTQ5NmMtYTU0Yy0zNTU4OGRlMGM0NWUiLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTcyNDg2MDExOSwiZXhwIjoxNzI0ODYzNzE5LCJpYXQiOjE3MjQ4NjAxMTksImp0aSI6IjU5ZTViOGI5LTI3OWEtNDhiZC1hYzgxLWQ4Mzc1N2ZlODIwNiIsImVtYWlsIjoic2hpa2hhLnFhekBnbWFpbC5jb20ifQ.JWx0YfBTJAs8Muxnmgo5x4A9ewDHVF4epP3TQTVPtsF08vCddoeFCswhDIjjcFiDovEO7qim8Ezh2E0YLirEej04dPsD1tUGtNBx6HB5epHejaa_xRltJDUGKjgB03Cj8jUbefJIxSEKR3bk3FXIXWzIZiScl6ItLIanbAqHz4lv40javXzbMZ3A8BTkuMXr8qTAA5K2amQNbPPpjzKolFM_bEpUsE4GV2fOUtJESxPJNtxLqKYhixfQWzks0QU48IMQcY1qoDFo4ekuTfoCq-xAM8TUKPIYitMOfGB3pTgc2KRyzQuYL26g9bt8JUHNr4I8Rq1hsGqn7RSrDnTHZA
+
+GET {{url}}/spaces
+Authorization: {{token}}
+###
+
+POST https://jspfr52878.execute-api.us-east-2.amazonaws.com/prod/spaces
+content-type: application/json
+
+{
+    "location" : "Dublin",
+    "name" : "test data"
+}
+###
 
 
-GET https://lnjh8uz197.execute-api.us-east-2.amazonaws.com/prod/spaces
+PUT https://jspfr52878.execute-api.us-east-2.amazonaws.com/prod/spaces?id=9dae15ff-3fb5-4f58-ba75-91ac623b91a6
+content-type: application/json
+
+{
+    "location" : "India"
+}
+###
+
+
+
+DELETE  {{url}}/spaces
+Authorization: {{token}}
 ###
