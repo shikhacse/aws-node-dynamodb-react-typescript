@@ -14,8 +14,9 @@ export async function postSpaces(event: APIGatewayProxyEvent, ddbClient: DynamoD
         TableName : process.env.TABLE_NAME,
         Item : {
             id: {S : randomId},
-            location : {S: item.location}
-
+            name : {S : item.name},
+            location : {S: item.location},
+            photoUrl : {S: item.photoUrl}
         }
     }))
     console.log(result)

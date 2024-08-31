@@ -21,6 +21,22 @@ export class DataService {
         this.authService = authService;
     }
 
+     public reserveSpace(spaceId: string) {
+        return '123';
+    }
+
+    public async getSpaces():Promise<SpaceEntry[]>{
+        const getSpacesResult = await fetch(spacesUrl, {
+            method: 'GET',
+            headers: {
+                'Authorization': this.authService.jwtToken!
+            }
+        });
+        const getSpacesResultJson = await getSpacesResult.json();
+        return getSpacesResultJson;
+    }
+
+
     public async createSpace(name: string, location:string, photo?: File){
        console.log('calling create space!!');
         const space = {} as SpaceEntry;  
@@ -63,6 +79,6 @@ export class DataService {
     }
 
         public isAuthorized(){
-        return true;
+         return this.authService.isAuthorized();
     }
 }

@@ -1,18 +1,20 @@
 {
   "DataStack": {
-    "ExportsOutputFnGetAttSpaceTableA2492A9AArnCBCB7E4B": "arn:aws:dynamodb:us-east-2:211125505858:table/SpaceTable-0a502dc16267",
-    "ExportsOutputRefSpaceTableA2492A9A3B0BE7FE": "SpaceTable-0a502dc16267"
+    "ExportsOutputFnGetAttSpaceTableA2492A9AArnCBCB7E4B": "arn:aws:dynamodb:us-east-2:211125505858:table/SpaceTable-025f8b152883",
+    "ExportsOutputFnGetAttSpaceFinderPhotosE708E252Arn354BE01C": "arn:aws:s3:::space-finder-photos-025f8b152883",
+    "SpaceFinderPhotosBucketName": "space-finder-photos-025f8b152883",
+    "ExportsOutputRefSpaceTableA2492A9A3B0BE7FE": "SpaceTable-025f8b152883"
   },
   "AuthStack": {
-    "ExportsOutputFnGetAttSpaceUserPool6AB542DCArnC2E21F85": "arn:aws:cognito-idp:us-east-2:211125505858:userpool/us-east-2_mGi90zeQV",
-    "SpaceUserPoolClient": "7khrv9n6g8bd5tgdgr7jr7g6gs",
-    "SpaceUserPoolId": "us-east-2_mGi90zeQV",
-    "SpaceIdentityPoolId": "us-east-2:77fbfc00-79e4-4bf2-b79a-f639b55b5044"
+    "ExportsOutputFnGetAttSpaceUserPool6AB542DCArnC2E21F85": "arn:aws:cognito-idp:us-east-2:211125505858:userpool/us-east-2_jQrOTkGpm",
+    "SpaceUserPoolClient": "5b87j3sajrr1g6rchn5vaql6ub",
+    "SpaceUserPoolId": "us-east-2_jQrOTkGpm",
+    "SpaceIdentityPoolId": "us-east-2:daf15415-28f7-4588-99a1-a0c03664ae84"
   },
   "LambdaStack": {
-    "ExportsOutputFnGetAttSpacesLambdaA5F923A4ArnE59FF2BB": "arn:aws:lambda:us-east-2:211125505858:function:LambdaStack-SpacesLambdaA5F923A4-gErweHjlC0H7"
+    "ExportsOutputFnGetAttSpacesLambdaA5F923A4ArnE59FF2BB": "arn:aws:lambda:us-east-2:211125505858:function:LambdaStack-SpacesLambdaA5F923A4-FPlQxs0mfZQd"
   },
   "ApiStack": {
-    "SpaceApiEndpointDA7E4050": "https://jspfr52878.execute-api.us-east-2.amazonaws.com/prod/"
+    "SpaceApiEndpointDA7E4050": "https://6lnczwz22e.execute-api.us-east-2.amazonaws.com/prod/"
   }
 }
