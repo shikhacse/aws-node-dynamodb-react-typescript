@@ -7,29 +7,49 @@ import { getSpaces } from "./GetSpaces";
 import { updateSpaces } from "./UpdateSpaces";
 import { deleteSpaces } from "./DeleteSpace";
 import { JsonError, MissingFieldError } from "../shared/validator";
+import { addCorsHeader } from "../shared/Utils";
+import { captureAWSv3Client, getSegment } from "aws-xray-sdk-core";
 
 
-const ddbClient = new DynamoDBClient({});
+const ddbClient = captureAWSv3Client(new DynamoDBClient({}))
 
 async function handler(event: APIGatewayProxyEvent, context: Context): Promise<APIGatewayProxyResult>{
     let message: string
+    let response : APIGatewayProxyResult;
+
+    const subSeg = getSegment().addNewSubsegment('MyLongCall')
+    await new Promise(resolve =>{ setTimeout(resolve, 3000)});
+    subSeg.close();
+
+    const subSeg2 = getSegment().addNewSubsegment('MyShortCall')
+    await new Promise(resolve =>{ setTimeout(resolve, 500)})
+    subSeg2.close();
+
 try{
    switch (event.httpMethod) {
         case 'GET':
             const getResponse = await getSpaces(event, ddbClient)
-            console.log(getResponse)
-            return getResponse;
+            // console.log(getResponse)
+            // addCorsHeader(getResponse)
+            response = getResponse;
+            break;
         case 'POST':
             const postResponse  =await postSpaces(event , ddbClient)
-            return postResponse;
+            // addCorsHeader(postResponse)
+            response = postResponse;
+            break;
         case 'PUT':
             const putResponse  =await updateSpaces(event , ddbClient)
             console.log(putResponse)
-            return putResponse;
+            //  addCorsHeader(putResponse)
+            response = putResponse;
+            break;
         case 'DELETE':
             const deleteResponse  =await deleteSpaces(event , ddbClient)
             console.log(deleteResponse)
-            return deleteResponse;
+            //  addCorsHeader(deleteResponse)
+            response = deleteResponse;
+            break;
         default:
             break;
    }
@@ -52,10 +72,7 @@ try{
         body : JSON.stringify(error.message)
     }
 }
-  const response : APIGatewayProxyResult = {
-    statusCode : 200,
-    body : message
-  }
+addCorsHeader(response)
   return response;
 }
 

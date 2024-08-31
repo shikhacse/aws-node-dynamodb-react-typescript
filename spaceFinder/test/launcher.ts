@@ -1,13 +1,15 @@
 import { handler } from "../src/services/spaces/handler";
 
 process.env.AWS_REGION = "us-east-2",
-process.env.TABLE_NAME = "SpaceTable-0a502dc16267"
-// handler({
-//     httpMethod : "POST",
-//     body : JSON.stringify({
-//         location : "London"
-//     })
-// } as any , {} as any)
+process.env.TABLE_NAME = "SpaceTable-025f8b152883"
+handler({
+    httpMethod : "POST",
+    body : JSON.stringify({
+        name:"hello",
+        location : "London",
+        photoUrl : "jenfwjenfnefnjwefnkwjen"
+    })
+} as any , {} as any)
 
 // handler({
 //     httpMethod : "GET",
@@ -36,11 +38,11 @@ process.env.TABLE_NAME = "SpaceTable-0a502dc16267"
 
 // test for validation 
 
-handler({
-    httpMethod : "POST",
-    body : JSON.stringify({
-        location : "London"
-    })
-} as any , {} as any).then(result =>{
-    console.log(result)
-})
+// handler({
+//     httpMethod : "POST",
+//     body : JSON.stringify({
+//         location : "London"
+//     })
+// } as any , {} as any).then(result =>{
+//     console.log(result)
+// })

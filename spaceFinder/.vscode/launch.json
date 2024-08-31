@@ -17,9 +17,21 @@
             "env":{
                 "AWS_REGION":"us-east-2",
                 "TABLE_NAME":"SpaceTable-0a502dc16267"
-            },
+            }
+        },
+          {
+            "type": "node",
+            "request": "launch",
+            "name": "Jest Current File",
+            "program": "${workspaceFolder}/node_modules/.bin/jest",
+            "args": [
+              "--runTestsByPath",
+              "${relativeFile}",
+              "--config",
+              "jest.config.ts"
+            ],
             "console": "integratedTerminal",
-            "skipFiles": ["<node_internals>/**"]
-        }
+            "internalConsoleOptions": "neverOpen"
+          }
     ]
 }
